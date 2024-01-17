@@ -1,0 +1,161 @@
+
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="weather.css">
+
+    <title>Weather Reconstruction</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-dark fixed-top bg-dark flex-xs-nowrap p-0 shadow">
+    <nav class="navbar navbar-dark bg-dark d-lg-none">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MainNavigation" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <a class="navbar-brand d-none d-sm-block ml-3" href="#" onclick="contentManager.setContent('introduction');">Weather Reconstruction</a>
+
+    <img src="svg/unibe_trans.gif" class="img-logo">
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 bg-light sidebar" id="MainNavigation">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link introduction" onclick="contentManager.setContent('introduction');" href="#introduction">
+                            Introduction
+                        </a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Climate Data</span>
+                </h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link climate-data-entry" onclick="contentManager.setContent('climate-data-entry');" href="#climate-data-entry">
+                            Intro
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link digitise"  onclick="contentManager.setContent('digitise');"  href="#digitise">
+                            Digitise
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link process"  onclick="contentManager.setContent('process');"  href="#process">
+                            Process
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link quality-control"  onclick="contentManager.setContent('quality-control');"  href="#quality-control">
+                            Quality Control
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link homogenize"  onclick="contentManager.setContent('homogenize');"  href="#homogenize">
+                            Homogenisation
+                        </a>
+                    </li>
+                </ul>
+
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Reanalyses</span>
+                </h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link reanalyses-entry"  onclick="contentManager.setContent('reanalyses-entry');"  href="#reanalyses-entry">
+                            Intro
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link assimilation"  onclick="contentManager.setContent('assimilation');"  href="#assimilation">
+                            Data Assimilation
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link simulation"  onclick="contentManager.setContent('simulation');"  href="#simulation">
+                            -> Simulation
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link reanalysis"  onclick="contentManager.setContent('reanalysis');"  href="#reanalysis">
+                            Reanalysis Data Sets
+                        </a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Downscaling and application </span>
+                </h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link downscaling-entry"  onclick="contentManager.setContent('downscaling-entry');"  href="#downscaling-entry">
+                            Intro
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link downscaling"  onclick="contentManager.setContent('downscaling');"  href="#downscaling">
+                            Downscaling
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link application"  onclick="contentManager.setContent('application');"  href="#application">
+                            Application
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <img class="" src="svg/oeschger_logo.png" height="128">
+                </div>
+                <hr>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>About</span>
+                </h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link contact"  onclick="contentManager.setContent('contact');"  href="#contact">
+                            Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link impressum"  onclick="contentManager.setContent('impressum');"  href="#impressum">
+                            Impressum
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class=" ml-md-auto col-lg-10 px-4 content">
+        </main>
+    </div>
+</div>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script  src="js/contentManager.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+<script  src="js/simulationHelper.js"></script>
+<script  src="js/baseSimulation.js"></script>
+<script  src="js/simulation1.js"></script>
+<script  src="js/simulation2.js"></script>
+<script  src="js/simulation2ExcelExport.js"></script>
+
+<script  src="node_modules/zipcelx/lib/standalone.js"></script>
+</body>
+</html>

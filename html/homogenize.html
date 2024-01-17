@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Homogenisation</h1>
+</div>
+<div class="card">
+    <div class="card-body">
+        <p class="card-text">
+            Even after QC, meteorological series may reflect non-climatic influences.
+            For instance, a replaced thermometer or the relocation of a weather screen
+            may have led to an artificial step change in temperature. Such effects are called
+            inhomogeneities, and the process of removing them is called homogenization.
+            Statistically, step inhomogeneities are called break points. To detect break points,
+            climatologists compare a candidate series with one or several reference series,
+            which are highly correlated with the candidate series, such as series from
+            neighbouring locations. The reference series is supposed to be homogeneous.
+            By analysing only the differences, the real weather variability (common to both series)
+            is suppressed, thus better exposing artificial aspects.
+        </p>
+        <p class="card-text">
+            A simple way to find breaks in meteorological time series is the Craddock test.
+            The basic principle is to accumulate the differences (for precipitation or wind ratios are used instead of differences).
+            In a homogenous section of the series, the accumulated differences build a straight line.
+            Breakpoints are recognizable subjectively as breaks or bends in the accumulated differences.
+        </p>
+    </div>
+</div>
+<p></p>
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Exercise I</h4>
+    <p class="font-italic"><i class="far fa-clock"></i> This exercise might take you ca. 10 min.</p>
+    <hr>
+    <p class="card-text">
+        For the Craddock test the accumulated normalized differences \(s\) are calculated as follows:
+
+        $$s_{i} = s_{i-1} + a_{i} - b_{i} - (a_{m} - b_{m}) $$
+        where \(a\) is the reference series, \(b\) is the candidate series, \(a_{m}\)
+        and \(b_{m}\) are their long-term means (\(s_{0} = 0\)).
+        Open the <a href="data/ClimateData_Homogenize_BreakDetection_Exercise.xls" target="_blank">Excel-file</a>
+        or the <a href="data/ClimateData_Homogenize_BreakDetection_Exercise.R" target="_blank">R file</a> with the <a href="data/ClimateData_Homogenize_BreakDetection_Data.txt" target="_blank">txt-data</a> and calculate \(s_{i}\).
+        Afterwards, find the breakpoints in the figure on the right in the Excel-sheet
+        (check the solution for <a href="data/ClimateData_Homogenize_BreakDetection_Solution.xls" target="_blank">Excel</a>
+        or <a href="data/ClimateData_Homogenize_BreakDetection_Solution.R" target="_blank">R</a>).
+    </p>
+    <h4 class="alert-heading">Exercise II</h4>
+    <p class="font-italic"><i class="far fa-clock"></i> This exercise might take you ca. 15-20 min.</p>
+    <hr>
+    <p class="card-text">
+        If possible, detected breaks are corrected. Thereby the most recent part of the series is considered to be
+        correct, and the earlier segments are corrected towards the recent segments, working backwards.
+        The correction amount is the the difference between the mean value of the
+        difference series before and after the break, and this correction amount is
+        subtracted form the segment before the break (see
+        <a href="http://www.geography.unibe.ch/dienstleistungen/geographica_bernensia/online/gb2015u27/index_ger.html" target="_blank">Climandes</a> for further information).
+        Open the <a href="data/ClimateData_Homogenize_BreakCorrection_Exercise.xls" target="_blank">Excel-file</a>
+        and try to correct the breaks you have found in the previous exercise
+        (here’s the solution for <a href="data/ClimateData_Homogenize_BreakCorrection_Solution.xls" target="_blank">Excel</a>).
+    </p>
+</div>
+<div class="d-flex justify-content-between">
+    <button type="button" class="btn btn-outline-secondary btn-lg" onclick="contentManager.setContent('quality-control');" ><- Previous</button>
+    <button type="button" class="btn btn-outline-secondary btn-lg" onclick="contentManager.setContent('reanalyses-entry');" >Next -></button>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>

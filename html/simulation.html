@@ -1,0 +1,80 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Simulation</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <form class="form-inline mb-md-0">
+            <label class="sr-only" for="horizontalSpeed">Name</label>
+            <input type="number" class="form-control mr-sm-2 mb-1" id="horizontalSpeed" value="25" min="1" max="50" data-toggle="tooltip" data-placement="bottom" title="Horizontal speed of the shot in simulation 1" placeholder="Horizontal Speed">
+
+            <label class="sr-only" for="verticalSpeed">Name</label>
+            <input type="number" class="form-control mr-sm-2 mb-1" id="verticalSpeed" value="25" min="1" max="50" data-toggle="tooltip" data-placement="bottom" title="Vertical speed of the shot in simulation 1" placeholder="Vertical Speed">
+            <button class="btn btn-outline-secondary mr-4  mb-1" data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+                    onclick="simulation1.init();
+                    simulation1.start($('#horizontalSpeed').val(),$('#verticalSpeed').val())">
+                Start Simulation 1</button>
+
+            <label class="sr-only" for="nrSteps">Steps</label>
+            <input type="number" class="form-control mr-sm-2 mb-1" id="nrSteps" value="3" min="1" max="10" data-toggle="tooltip" data-placement="bottom" title="Number of steps in simulation 2" placeholder="Steps">
+
+            <label class="sr-only" for="nrBalls">Name</label>
+            <input type="number" class="form-control mr-sm-2 mb-1" id="nrBalls" value="10" min="1" max="50" data-toggle="tooltip" data-placement="bottom" title="Number of balls in simulation 2"  placeholder="Balls">
+            <button class="btn btn-outline-secondary" onclick="simulation2.init();
+                                simulation2.start($('#nrSteps').val(),$('#nrBalls').val())">Start Simulation 2</button>
+        </form>
+        </div>
+    </div>
+</div>
+<div class="simulation-space">
+</div>
+<!-- Modal -->
+<div class="modal fade" id="ResultsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary modal-action">Excel Export</button>
+                <button type="button" class="btn btn-primary show-solution" style="display:none">Excel Export Solution</button>
+            </div>
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="d-flex justify-content-between">
+    <button type="button" class="btn btn-outline-secondary btn-lg" onclick="contentManager.setContent('assimilation');" ><- Previous</button>
+    <button type="button" class="btn btn-outline-secondary btn-lg" onclick="contentManager.setContent('reanalysis');" >Next -></button>
+</div>
+<p></p>
+<!--
+<h2 class="h3 results">Ergebnisse</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Result</th>
+        <th scope="col">Export</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td><span class="badge badge-success">Hit</span></td>
+        <td><button type="button" class="btn btn-primary">Export</button></td>
+    </tr>
+    <tr>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td><span class="badge badge-danger">Miss</span></td>
+        <td><button type="button" class="btn btn-primary">Export</button></td>
+    </tr>
+    </tbody>
+</table>
+-->

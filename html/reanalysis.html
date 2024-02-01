@@ -4,21 +4,30 @@
 <div class="card">
     <div class="card-body">
         <p class="card-text">
-            Reanalyses are consistent with the observations and with the model physics – they
-            are best estimates of the atmospheric state. However, this does not guarantee
-            that they are correct or even useful, particularly far away from observation
-            locations or for derived variables. Because reanalyses provide all variables everywhere
-            and always, it is tempting to use them for all sorts of applications. But they
-            may not be suitable for your application. Understanding how the data set is
-            generated is therefore important, and dealing with the massive amount of data also is a
-            challenge.
+            The climatology group of the Institute of Geography produced a palaeo-reanalysis, 
+            a monthly, global, 3-dimensional reconstruction using the Ensemble Kalman Filter 
+            in an offline assimilation approach. In contrast to online data assimilation, 
+            in which the updated model state at every assimilation time step is used to initialize 
+            a new forecast, offline data assimilation only performs the update. 
+            This is possible because for atmospheric models, and over the time scale of the assimilation 
+            (in this case six months), atmospheric initial conditions hardly matter. 
+            The product is the "Modern Era Reanalysis"
+            (ModE-RA, Valler et al. 2024 [<a href="https://www.nature.com/articles/s41597-023-02733-8/" target="_blank">https://www.nature.com/articles/s41597-023-02733-8</a>]), 
+            which covers the period from 1421 to 2008. ModE-RA provides monthly output using a seasonal 
+            assimilation window, such that monthly mean instrumental or documentary data can be assimilated 
+            simultaneously with seasonal proxies (e.g. tree rings, plant or ice phenology). 
+            The model prior or background xb is taken from an ensemble of 20 atmospheric model simulations (ModE-Sim). 
+            In addition to ModE-RA, another data set termed ModE-RAclim is generated in which the prior is not taken 
+            from the year to be reconstructed, but is a random sample of 100 model years. 
+            This means that ModE-RAclim does not see the time-varying boundary conditions of the model
+            (such as sea-surface temperatures or volcanic forcing) but only depends on the boundary conditions
+            of the model and does not see the observations. Analyzing all three products together 
+            (ModE-RA, ModE-RAclim and ModE-Sim) allows for disentangling where the information in ModE-RA comes from.
         </p>
         <p class="card-text">
-            The best training is to explore that data sets.
-            For the historical reanalysis CERA-20C, which is generated from the assimilation
-            of surface pressure and marine wind data into a forecast model, an interactive
-            visualization can be found here <a href="http://earth.fdn-dev.iwi.unibe.ch/" target="_blank">http://earth.fdn-dev.iwi.unibe.ch</a>.
-            The exercise bellow asks you to explore some specific aspects.
+            Easy access to the data set is possible through the site: <a href="https://mode-ra.unibe.ch/climeapp//" target="_blank">https://mode-ra.unibe.ch/climeapp/</a>. 
+            Here you can choose the data set to be analysed (ModE-RA, ModE-RAclim and ModE-Sim), 
+            the variable, season and time period. It allows to display anomalies, composites, correlation and regression analyses. 
         </p>
     </div>
 </div>
